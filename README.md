@@ -1,4 +1,4 @@
-# RaDIOhm
+# Radiohm
 
 ![screenshot](https://raw.githubusercontent.com/Pattedetable/radiohm-vernier/master/radiohm_screenshot.png)
 

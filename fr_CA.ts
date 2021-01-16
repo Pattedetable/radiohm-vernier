@@ -4,8 +4,8 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>RaDIOhm</source>
-        <translation>RaDIOhm</translation>
+        <source>Radiohm</source>
+        <translation>Radiohm</translation>
     </message>
     <message>
         <source>Quitter</source>

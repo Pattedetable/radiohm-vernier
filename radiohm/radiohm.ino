@@ -1,3 +1,4 @@
+// La lecture du vernier numérique est tirée de https://www.instructables.com/Hacked-Digital-Vernier-Caliper-Using-Arduino/
 
 // Pin des capteurs
 int VCAPTEUR = A0;

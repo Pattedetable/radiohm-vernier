@@ -113,7 +113,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         self._translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(self._translate("MainWindow", "RaDIOhm"))
+        MainWindow.setWindowTitle(self._translate("MainWindow", "Radiohm"))
         self.btn.setText(self._translate("MainWindow", "Mettre à jour"))
         self.btn2.setText(self._translate("MainWindow", "Effacer"))
         self.btn4.setText(self._translate("MainWindow", "Enregistrer"))
