@@ -204,7 +204,7 @@ class Ui_MainWindow(object):
         systeme_exploitation = platform.system()
         for p in ports:
             if systeme_exploitation == 'Windows':
-                if "Arduino" in p.description or "Serial" in p.description or "série" in p.description:
+                if "Arduino" in p.description or "USB Serial Device" in p.description or "Périphérique série USB" in p.description:
                     print(p.device)
                     return p.device
             elif systeme_exploitation == 'Linux' and "Arduino" in p.manufacturer:
