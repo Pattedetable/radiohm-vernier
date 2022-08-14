@@ -18,7 +18,7 @@
 
 import serial, io
 import serial.tools.list_ports
-from PyQt5 import QtGui, QtWidgets
+from PyQt6 import QtGui, QtWidgets
 import pyqtgraph as pg
 import numpy as np
 import matplotlib.pyplot as plt
@@ -68,7 +68,7 @@ class Ui_MainWindow(object):
         self.menu_aide = QtWidgets.QMenu(self.menubar)
         self.menu_aide.setObjectName("menu_aide")
         MainWindow.setMenuBar(self.menubar)
-        self.action_propos = QtWidgets.QAction(MainWindow)
+        self.action_propos = QtGui.QAction(MainWindow)
         self.action_propos.setObjectName("action_propos")
         self.menu_aide.addAction(self.action_propos)
         self.menubar.addAction(self.menu_aide.menuAction())

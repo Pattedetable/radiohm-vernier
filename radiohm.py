@@ -17,8 +17,8 @@
 
 """ Initialize windows and make the main window appear """
 import sys
-from PyQt5 import QtCore
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog
+from PyQt6 import QtCore
+from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog
 import radiohm_main_window
 import dialog_radiohm
 import platform
@@ -52,4 +52,4 @@ ui_Window.setupUi(window, dialog, None)
 
 # Make main window appear
 window.show()
-sys.exit(app.exec_())
+sys.exit(app.exec())

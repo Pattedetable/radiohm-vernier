@@ -33,7 +33,7 @@ Vous aurez aussi besoin des modules Python suivants :
 
   * Numpy
   * Matplotlib
-  * PyQt5
+  * PyQt6
   * pyqtgraph
   * pyserial
 
@@ -95,7 +95,7 @@ You will also need the following Python modules:
 
   * Numpy
   * Matplotlib
-  * PyQt5
+  * PyQt6
   * pyqtgraph
   * pyserial
 
