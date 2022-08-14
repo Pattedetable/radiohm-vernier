@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
 
     def enregistrer(self):
         extension = self._translate("MainWindow", "Données") + " (*.txt)"
-        fichier = QtGui.QFileDialog.getSaveFileName(None, self._translate("MainWindow", "Enregistrer sous..."), '', extension)
+        fichier = QtWidgets.QFileDialog.getSaveFileName(None, self._translate("MainWindow", "Enregistrer sous..."), '', extension)
         nom_fichier = fichier[0]
         if nom_fichier != "" and nom_fichier[-4:] != ".txt":
             nom_fichier = nom_fichier + ".txt"
