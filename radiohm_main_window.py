@@ -151,10 +151,9 @@ class Ui_MainWindow(object):
         extension = self._translate("MainWindow", "Données") + " (*.txt)"
         systeme_exploitation = platform.system()
         if systeme_exploitation == "Linux":
-            options_fenetre = QtWidgets.QFileDialog.Option.DontUseNativeDialog # Otherwise when the Arduino is plugged in, the window does not appear
+            fichier = QtWidgets.QFileDialog.getSaveFileName(None, self._translate("MainWindow", "Enregistrer sous..."), '', extension, options=QtWidgets.QFileDialog.Option.DontUseNativeDialog)
         else:
-            options_fenetre = None
-        fichier = QtWidgets.QFileDialog.getSaveFileName(None, self._translate("MainWindow", "Enregistrer sous..."), '', extension, options=QtWidgets.QFileDialog.Option.DontUseNativeDialog)
+            fichier = QtWidgets.QFileDialog.getSaveFileName(None, self._translate("MainWindow", "Enregistrer sous..."), '', extension)
         nom_fichier = fichier[0]
         if nom_fichier != "" and nom_fichier[-4:] != ".txt":
             nom_fichier = nom_fichier + ".txt"
@@ -183,11 +182,9 @@ class Ui_MainWindow(object):
         extension = self._translate("MainWindow", "Données") + " (*.txt)"
         systeme_exploitation = platform.system()
         if systeme_exploitation == "Linux":
-            options_fenetre = QtWidgets.QFileDialog.Option.DontUseNativeDialog # Otherwise when the Arduino is plugged in, the window does not appear
+            fichier = QtWidgets.QFileDialog.getOpenFileName(None, self._translate("MainWindow", "Ouvrir..."), "", extension, options=QtWidgets.QFileDialog.Option.DontUseNativeDialog)
         else:
-            options_fenetre = None
-        fichier = QtWidgets.QFileDialog.getOpenFileName(None, self._translate("MainWindow", "Ouvrir..."), "", extension, options=options_fenetre)
-
+            fichier = QtWidgets.QFileDialog.getOpenFileName(None, self._translate("MainWindow", "Ouvrir..."), "", extension)
         try:
             lecture = open(fichier[0])
             xdata = []
