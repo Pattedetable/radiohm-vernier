@@ -1,6 +1,6 @@
 # Radiohm
 
-![screenshot](https://raw.githubusercontent.com/Pattedetable/radiohm-vernier/master/radiohm_screenshot.png)
+![screenshot](https://raw.githubusercontent.com/Pattedetable/radiohm-vernier/qt6/images/radiohm_screenshot.png)
 
 _The English version follows_
 
@@ -8,13 +8,13 @@ _The English version follows_
 
 Ce programme a pour but de faire l'acquisition de données de l'intensité lumineuse en fonction de la position dans une expérience d'interférence et de diffraction.
 
-![screenshot](https://raw.githubusercontent.com/Pattedetable/radiohm-vernier/master/montage.jpg)
+![screenshot](https://raw.githubusercontent.com/Pattedetable/radiohm-vernier/qt6/images/montage.jpg)
 
 L'acquisition passe par une carte Arduino Uno avec le script ```radiohm.ino```.  Le calcul de la position se fait avec un vernier numérique.  Un détecteur de lumière est fixé à celui-ci.  Dans le graphique, la position est représentée sur l'axe des x, et l'intensité lumineuse (en fait la différence de potentiel aux bornes du détecteur) sur l'axe des y.
 
-![screenshot](https://raw.githubusercontent.com/Pattedetable/radiohm-vernier/master/montage_breadboard.jpg)
+![screenshot](https://raw.githubusercontent.com/Pattedetable/radiohm-vernier/qt6/images/montage_breadboard.jpg)
 
-Le programme est disponible pour Linux, MacOS et Windows.  Il s'agit en même temps d'un projet personnel d'apprentissage de programmation.  Si vous trouvez des erreurs, sentez-vous bien à l'aise de les souligner à partir de l'onglet "Issues" sur [GitHub](https://github.com/Pattedetable/radiohm).
+Le programme est disponible pour Linux, MacOS et Windows.  Il s'agit en même temps d'un projet personnel d'apprentissage de programmation.  Si vous trouvez des erreurs, sentez-vous bien à l'aise de les souligner à partir de l'onglet "Issues" sur [GitHub](https://github.com/Pattedetable/radiohm-vernier).
 
 Le fichier utilisé pour démarrer le programme est ```radiohm.py```.
 
@@ -70,13 +70,13 @@ Ce logiciel utilise des bibliothèques de Qt sous la licence LGPLv3, ainsi que d
 
 This software serves to gather data of the intensity of the light as a function of position in a diffraction and interference experiment.
 
-![screenshot](https://raw.githubusercontent.com/Pattedetable/radiohm-vernier/master/montage.jpg)
+![screenshot](https://raw.githubusercontent.com/Pattedetable/radiohm-vernier/qt6/images/montage.jpg)
 
 The data is gathered through an Arduino Uno board with the ```radiohm.ino``` script on it.  The position is computed using a digital caliper.  A light detector is fixed to it.  On the graph, the position is represented on the x axis, while the intensity of the light (in fact the voltage of the detector) is represented on the y axis.
 
-![screenshot](https://raw.githubusercontent.com/Pattedetable/radiohm-vernier/master/montage_breadboard.jpg)
+![screenshot](https://raw.githubusercontent.com/Pattedetable/radiohm-vernier/qt6/images/montage_breadboard.jpg)
 
-This program is available for Linux, MacOS and Windows.  It is also a personal learning project.  Please report any errors you find using the "Issues" tab on [GitHub](https://github.com/Pattedetable/radiohm).
+This program is available for Linux, MacOS and Windows.  It is also a personal learning project.  Please report any errors you find using the "Issues" tab on [GitHub](https://github.com/Pattedetable/radiohm-vernier).
 
 The file used to start the program is ```radiohm.py```.
 

@@ -17,12 +17,20 @@
 
 """ Initialize windows and make the main window appear """
 import sys
-from PyQt6 import QtCore
-from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog
-import radiohm_main_window
-import dialog_radiohm
 import platform
 import locale, ctypes
+import glob, os
+from PyQt6 import QtCore
+from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog
+
+results = glob.glob(os.getcwd() + "/**/", recursive=True)
+for result in results:
+    if result[-2] != "_":
+        sys.path.insert(1, result)
+
+
+import radiohm_main_window
+import dialog_radiohm
 
 # Initialize windows
 app = QApplication(sys.argv)
@@ -37,11 +45,12 @@ elif systeme_exploitation == 'Darwin' or 'Linux':
     langue_sys = locale.getdefaultlocale()[0]
 langue_sys = langue_sys[0:2]
 translator = QtCore.QTranslator()
+directory = "locales"
 if langue_sys == "fr":
     langue = "fr_CA"
 else:
     langue = "en_CA"
-translator.load(langue)
+translator.load(langue, directory)
 app.installTranslator(translator)
 
 ui_Window = radiohm_main_window.Ui_MainWindow()
