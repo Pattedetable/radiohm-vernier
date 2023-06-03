@@ -57,7 +57,7 @@ ui_Window = radiohm_main_window.Ui_MainWindow()
 ui_Dial = dialog_radiohm.Ui_Dialog()
 
 ui_Dial.setupUi(dialog)
-ui_Window.setupUi(window, dialog, None)
+ui_Window.setupUi(window, dialog, ui_Dial, None)
 
 # Make main window appear
 window.show()

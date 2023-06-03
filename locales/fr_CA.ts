@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Mettre à jour</source>
-        <translation>Mettre à jour</translation>
+        <translation>Acquisitionner</translation>
     </message>
     <message>
         <source>Arrêter</source>
@@ -69,12 +69,16 @@
         <translation>d'un fichier</translation>
     </message>
     <message>
-        <source>Aide</source>
-        <translation>Aide</translation>
+        <source>Options</source>
+        <translation>Options</translation>
     </message>
     <message>
         <source>À propos</source>
         <translation>À propos</translation>
+    </message>
+    <message>
+        <source>Langue</source>
+        <translation>Langue</translation>
     </message>
 </context>
 <context>

@@ -27,8 +27,9 @@ import platform, os, time
 import locale, ctypes
 
 class Ui_MainWindow(object):
-    def setupUi(self, MainWindow, Dialog, parent):
+    def setupUi(self, MainWindow, Dialog, ui_Dialog, parent):
 
+#        self.app = app
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1200, 800)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -68,9 +69,21 @@ class Ui_MainWindow(object):
         self.menu_aide = QtWidgets.QMenu(self.menubar)
         self.menu_aide.setObjectName("menu_aide")
         MainWindow.setMenuBar(self.menubar)
+        self.action_translate = QtWidgets.QMenu(MainWindow)
+        self.action_translate.setObjectName("action_translate")
+        self.menu_aide.addMenu(self.action_translate)
+
+        self.action_fr = QtGui.QAction(MainWindow)
+        self.action_fr.setObjectName("action_fr")
+        self.action_translate.addAction(self.action_fr)
+        self.action_en = QtGui.QAction(MainWindow)
+        self.action_en.setObjectName("action_en")
+        self.action_translate.addAction(self.action_en)
+
         self.action_propos = QtGui.QAction(MainWindow)
         self.action_propos.setObjectName("action_propos")
         self.menu_aide.addAction(self.action_propos)
+
         self.menubar.addAction(self.menu_aide.menuAction())
 
         # Initial parameters
@@ -104,6 +117,8 @@ class Ui_MainWindow(object):
 
         # Buttons triggers
         self.action_propos.triggered.connect(lambda: Dialog.show())
+        self.action_fr.triggered.connect(lambda: self.traduire(MainWindow, Dialog, ui_Dialog, "fr_CA"))
+        self.action_en.triggered.connect(lambda: self.traduire(MainWindow, Dialog, ui_Dialog, "en_CA"))
         self.btn.clicked.connect(lambda: self.toggleUpdate())
         self.btn2.clicked.connect(lambda: self.effacer())
         self.btn3.clicked.connect(lambda: self.graphique())
@@ -120,10 +135,23 @@ class Ui_MainWindow(object):
         nom_bouton = self._translate("MainWindow", "Graphique à partir") + " \n " + self._translate("MainWindow", "d'un fichier")
         self.btn3.setText(nom_bouton)
         self.btn5.setText(self._translate("MainWindow", "Quitter"))
-        self.menu_aide.setTitle(self._translate("MainWindow", "Aide"))
+        self.menu_aide.setTitle(self._translate("MainWindow", "Options"))
         self.action_propos.setText(self._translate("MainWindow", "À propos"))
+        self.action_translate.setTitle(self._translate("MainWindow", "Langue"))
+        self.action_fr.setText(self._translate("MainWindow", "Français"))
+        self.action_en.setText(self._translate("MainWindow", "English"))
         self.plot.setLabel('left', text=self._translate("MainWindow", "Intensité (u.a.)"))
         self.plot.setLabel('bottom', text=self._translate("MainWindow", "Position"), units='m')
+
+
+    def traduire(self, MainWindow, Dialog, ui_Dialog, langue):
+        directory = "locales"
+        self.translator = QtCore.QTranslator()
+        self.translator.load(langue, directory)
+        QtCore.QCoreApplication.installTranslator(self.translator)
+        self.retranslateUi(MainWindow)
+        ui_Dialog.retranslateUi(Dialog)
+
 
     def fermerEtAfficher(self):
         app = QtWidgets.QApplication.instance()
@@ -138,6 +166,7 @@ class Ui_MainWindow(object):
             self.btn.setText(self._translate("MainWindow", "Mettre à jour"))
         return None
 
+
     def effacer(self):
         self.xdata = []
         self.ydata = []
@@ -146,6 +175,7 @@ class Ui_MainWindow(object):
 #        self.outFile.truncate()
         self.compteur = 0
         return None
+
 
     def enregistrer(self):
         extension = self._translate("MainWindow", "Données") + " (*.txt)"
@@ -205,6 +235,7 @@ class Ui_MainWindow(object):
             plt.show()
         except(FileNotFoundError):
             pass
+
 
     def findDevice(self):
         ports = list(serial.tools.list_ports.comports())
