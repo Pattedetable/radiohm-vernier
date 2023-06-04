@@ -61,7 +61,7 @@ Sous Windows, vous pouvez aussi double-cliquer sur le fichier ```radiohm.py```.
 Le programme est distribué sous la licence GNU GPLv3.  Pour le texte complet, référez-vous au fichier `LICENSE`.
 La version courte de cette licence est que vous êtes libre d'utiliser ce logiciel, d'en modifier le code source, ainsi que de le redistribuer, que ce soit sous sa version originale ou modifiée.  Cependant, vous devez donner ces mêmes droits aux personnes qui utiliseront votre logiciel redistribué.
 
-Le code source est disponible sur [GitHub](https://github.com/Pattedetable/radiohm).
+Le code source est disponible sur [GitHub](https://github.com/Pattedetable/radiohm-vernier).
 
 Ce logiciel utilise des bibliothèques de Qt sous la licence LGPLv3, ainsi que de Python, Numpy et Matplotlib.
 
@@ -127,6 +127,6 @@ Moreover, on Windows, you can simply double-click on the ```radiohm.py``` file.
 This program is distributed under the GNU GPLv3 licence.  The details of this license can be found in the `LICENSE` file.
 The short version is that you are free to use this software, to modify its source code, and to redistribute it in either its original or modified form.  However, you have to give those same rights to the users of the redistributed software.
 
-The source code is available on [GitHub](https://github.com/Pattedetable/radiohm).
+The source code is available on [GitHub](https://github.com/Pattedetable/radiohm-vernier).
 
 This software uses libraries from Qt under the LGPLv3, Python, Numpy and Matplotlib.
