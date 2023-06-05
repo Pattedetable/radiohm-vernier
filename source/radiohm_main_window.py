@@ -110,9 +110,13 @@ class Ui_MainWindow(object):
 
         self.connexionold = 0
 #        self.outFile = open(self.filename,'w')
-        self.timer = QtCore.QTimer()
-        self.timer.timeout.connect(lambda: self.update())
-        self.timer.start(int(1000/fps))
+        self.timer_recherche = QtCore.QTimer()
+        self.timer_recherche.timeout.connect(lambda: self.searchThread(fps))
+        self.timer_recherche.start(1000)
+
+        self.timer_lecture = QtCore.QTimer()
+        self.timer_lecture.timeout.connect(lambda: self.update(fps))
+#        self.timer_lecture.start(int(1000/fps))
 
 
         # Buttons triggers
@@ -162,6 +166,9 @@ class Ui_MainWindow(object):
         self.flagUpdate = not self.flagUpdate
         if self.flagUpdate:
             self.btn.setText(self._translate("MainWindow", "Arrêter"))
+            if self.device:
+                self.serialPort.reset_input_buffer()
+                line = self.serialPort.readline() # Jeter la premiere ligne car souvent incomplete
         else:
             self.btn.setText(self._translate("MainWindow", "Mettre à jour"))
         return None
@@ -253,29 +260,22 @@ class Ui_MainWindow(object):
                 return p.device
 
 
-    def update(self):
-        #self.connexion=os.path.exists(self.device)
-        if self.connexionold == 0 and self.connexion == 1:
-            print("Connexion...")
-            self.device = self.findDevice()
+    def searchThread(self, fps):
+        self.device = self.findDevice()
+        if self.device:
+            print("Connecte")
             time.sleep(1)
-            if self.device:
-                self.serialPort = serial.Serial(self.device,self.baud)
-            else:
-                self.connexion = 0
-            time.sleep(1)
-        self.connexionold = self.connexion
-        if self.flagConnexion == 0:
-            if self.connexion==0:
-                print ("Deconnecte")
-            elif self.connexion == 1:
-                print ("Connecte")
-            self.flagConnexion = 1
-        if self.connexion == 1 and self.flagConnexion == 1:
-            line = self.serialPort.readline() # Jeter la première ligne car elle est souvent incomplète #ICI
+            self.serialPort = serial.Serial(self.device,self.baud)
+            self.timer_recherche.stop()
+            self.timer_lecture.start(int(1000/fps))
+
+
+    def update(self, fps):
+        try:
+            line = self.serialPort.readline()
             if self.flagUpdate == True:
                 self.compteur = self.compteur + 1
-                line = self.serialPort.readline()
+#                line = self.serialPort.readline()
                 line2 = line.rstrip()
                 ligne = line2.decode("utf-8")
                 x, y = ligne.split(" ", 1)
@@ -291,3 +291,8 @@ class Ui_MainWindow(object):
 #                donnees = str(x) + " " + str(y) + "\n"
 #                self.outFile.write(donnees)
                 self.courbe.setData(self.xdata, self.ydata)
+        except serial.serialutil.SerialException:
+            print("Deconnecte")
+            self.timer_lecture.stop()
+            self.timer_recherche.start(1000)
+            self.device = False
