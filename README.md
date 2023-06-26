@@ -35,7 +35,7 @@ Vous aurez aussi besoin des modules Python suivants :
   * Matplotlib
   * PyQt6
   * pyqtgraph (>=0.12)
-  * pyserial
+  * pySerial
 
 Si vous utilisez Linux, il est fort probable qu'ils se trouvent dans les dépôts logiciels de votre distribution.
 
@@ -63,7 +63,7 @@ La version courte de cette licence est que vous êtes libre d'utiliser ce logici
 
 Le code source est disponible sur [GitHub](https://github.com/Pattedetable/radiohm-vernier).
 
-Ce logiciel utilise des bibliothèques de Qt sous la licence LGPLv3, ainsi que de Python, Numpy et Matplotlib.
+Ce logiciel utilise des bibliothèques de Qt sous la licence LGPLv3, ainsi que de Python, Numpy, pySerial et Matplotlib.
 
 
 ## English
@@ -97,7 +97,7 @@ You will also need the following Python modules:
   * Matplotlib
   * PyQt6
   * pyqtgraph (>= 0.12)
-  * pyserial
+  * pySerial
 
 On Linux, you will most likely find these modules in your distribution's repositories.
 
@@ -129,4 +129,4 @@ The short version is that you are free to use this software, to modify its sourc
 
 The source code is available on [GitHub](https://github.com/Pattedetable/radiohm-vernier).
 
-This software uses libraries from Qt under the LGPLv3, Python, Numpy and Matplotlib.
+This software uses libraries from Qt under the LGPLv3, Python, Numpy, pySerial and Matplotlib.
