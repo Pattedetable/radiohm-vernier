@@ -1,5 +1,5 @@
 #
-# Copyright 2019-2023 Manuel Barrette
+# Copyright 2019-2025 Manuel Barrette
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
