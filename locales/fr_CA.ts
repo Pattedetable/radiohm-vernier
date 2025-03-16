@@ -80,6 +80,10 @@
         <source>Langue</source>
         <translation>Langue</translation>
     </message>
+    <message>
+        <source>Position (m), Intensity (u.a.)</source>
+        <translation>Position (m), Intensité (u.a.)</translation>
+    </message>
 </context>
 <context>
     <name>Dialog</name>

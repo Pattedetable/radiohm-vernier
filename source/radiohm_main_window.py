@@ -195,6 +195,8 @@ class Ui_MainWindow(object):
         if nom_fichier != "" and nom_fichier[-4:] != ".txt":
             nom_fichier = nom_fichier + ".txt"
         fichier = open(nom_fichier, 'w')
+        entete = self._translate("MainWindow", "Position (m), Intensity (u.a.)") + "\n"
+        fichier.write(entete)
         for i in range(0,self.compteur):
             sortie = str(self.xdata[i]) + " " + str(self.ydata[i]) + "\n"
             fichier.write(sortie)
@@ -226,7 +228,7 @@ class Ui_MainWindow(object):
             lecture = open(fichier[0])
             xdata = []
             ydata = []
-
+            lecture.readline() # To throw away the line of text at the beginning
             for line in lecture:
                 x, y = line.split(" ", 1)
                 x = float(x)
