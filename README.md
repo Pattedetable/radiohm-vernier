@@ -65,6 +65,8 @@ Le code source est disponible sur [GitHub](https://github.com/Pattedetable/radio
 
 Ce logiciel utilise des bibliothèques de Qt sous la licence LGPLv3, ainsi que de Python, Numpy, pySerial et Matplotlib.
 
+Le code écrit par Ahmed Ragab a aussi été utilisé pour la lecture du vernier numérique.  Il est disponible [ici](https://www.instructables.com/Hacked-Digital-Vernier-Caliper-Using-Arduino/).
+
 
 ## English
 
@@ -130,3 +132,5 @@ The short version is that you are free to use this software, to modify its sourc
 The source code is available on [GitHub](https://github.com/Pattedetable/radiohm-vernier).
 
 This software uses libraries from Qt under the LGPLv3, Python, Numpy, pySerial and Matplotlib.
+
+The code written by Ahmed Ragab was used to read the digital caliper.  It is available [here](https://www.instructables.com/Hacked-Digital-Vernier-Caliper-Using-Arduino/).

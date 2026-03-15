@@ -1,5 +1,5 @@
 #
-# Copyright 2019-2025 Manuel Barrette
+# Copyright 2019-2026 Manuel Barrette
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -195,10 +195,10 @@ class Ui_MainWindow(object):
         if nom_fichier != "" and nom_fichier[-4:] != ".txt":
             nom_fichier = nom_fichier + ".txt"
         fichier = open(nom_fichier, 'w')
-        entete = self._translate("MainWindow", "Position (m), Intensity (u.a.)") + "\n"
+        entete = self._translate("MainWindow", "Position,Intensity") + "\n"
         fichier.write(entete)
         for i in range(0,self.compteur):
-            sortie = str(self.xdata[i]) + " " + str(self.ydata[i]) + "\n"
+            sortie = str(self.xdata[i]) + "," + str(self.ydata[i]) + "\n"
             fichier.write(sortie)
         fichier.close()
 
@@ -217,7 +217,6 @@ class Ui_MainWindow(object):
 #        os.system(commande)
 
     def graphique(self):
-
         extension = self._translate("MainWindow", "Données") + " (*.txt)"
         systeme_exploitation = platform.system()
         if systeme_exploitation == "Linux":
@@ -230,7 +229,7 @@ class Ui_MainWindow(object):
             ydata = []
             lecture.readline() # To throw away the line of text at the beginning
             for line in lecture:
-                x, y = line.split(" ", 1)
+                x, y = line.split(",", 1)
                 x = float(x)
                 y = float(y)
                 xdata.append(x)
@@ -274,8 +273,8 @@ class Ui_MainWindow(object):
 
     def update(self, fps):
         try:
-            line = self.serialPort.readline()
             if self.flagUpdate == True:
+                line = self.serialPort.readline()
                 self.compteur = self.compteur + 1
 #                line = self.serialPort.readline()
                 line2 = line.rstrip()
