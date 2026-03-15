@@ -268,18 +268,19 @@ class Ui_MainWindow(object):
             time.sleep(1)
             self.serialPort = serial.Serial(self.device,self.baud)
             self.timer_recherche.stop()
+            line = self.serialPort.readline() # Jeter la premiere ligne car souvent incomplete
             self.timer_lecture.start(int(1000/fps))
 
 
     def update(self, fps):
         try:
+#            line = self.serialPort.readline()
             if self.flagUpdate == True:
                 line = self.serialPort.readline()
-                self.compteur = self.compteur + 1
-#                line = self.serialPort.readline()
                 line2 = line.rstrip()
                 ligne = line2.decode("utf-8")
                 x, y = ligne.split(" ", 1)
+                self.compteur = self.compteur + 1
                 x = float(x)
                 y = float(y) # Unités arbitraires
 #                x = self.E*x/1023
