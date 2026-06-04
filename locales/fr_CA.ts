@@ -81,8 +81,8 @@
         <translation>Langue</translation>
     </message>
     <message>
-        <source>Position (m), Intensity (u.a.)</source>
-        <translation>Position (m), Intensité (u.a.)</translation>
+        <source>Position,Intensité</source>
+        <translation>Position,Intensité</translation>
     </message>
 </context>
 <context>

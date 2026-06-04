@@ -195,7 +195,7 @@ class Ui_MainWindow(object):
         if nom_fichier != "" and nom_fichier[-4:] != ".txt":
             nom_fichier = nom_fichier + ".txt"
         fichier = open(nom_fichier, 'w')
-        entete = self._translate("MainWindow", "Position,Intensity") + "\n"
+        entete = self._translate("MainWindow", "Position,Intensité") + "\n"
         fichier.write(entete)
         for i in range(0,self.compteur):
             sortie = str(self.xdata[i]) + "," + str(self.ydata[i]) + "\n"
